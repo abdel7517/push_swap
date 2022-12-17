@@ -19,6 +19,13 @@
 # include "./../libft/libft.h"
 # include "./../ft_printf/ft_printf.h"
 
+typedef struct s_stack
+{
+	int		value;
+	int		index;
+	s_stack	*next;
+}	t_stack;
+
 char	**ft_concat_split(int argc, char **argv);
 char	*ft_strcat(char *dest, char *src);
 char	*ft_concat(int argc, char **argv);

@@ -25,7 +25,11 @@ void	deallocate(char **strs)
 int	main(int argc, char **argv)
 {
 	char	**strs;
+	t_stack	*stack_a;
 
+	stack_a = malloc(sizeof(t_stack));
+	if (stack_a == NULL)
+		return (ft_putstr_fd("Error\n", 2), 0);
 	if (argc < 2)
 		return (ft_putstr_fd("Error\n", 2), 0);
 	else
@@ -37,5 +41,6 @@ int	main(int argc, char **argv)
 			ft_printf("Let's go !\n");
 		deallocate(strs);
 	}
+	free(stack_a);
 	return (0);
 }
