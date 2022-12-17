@@ -3,6 +3,7 @@ SRCS_DIR = ./srcs/
 SRCS =	main.c \
 		ft_concat.c \
 		check_map.c \
+		fill_stack.c \
 
 OBJS = ${addprefix ${SRCS_DIR}, ${SRCS:.c=.o}}
 

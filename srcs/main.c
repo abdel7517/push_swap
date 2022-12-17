@@ -12,7 +12,7 @@
 
 #include "./push_swap.h"
 
-void	deallocate(char **strs)
+void	deallocate_args(char **strs)
 {
 	int	i;
 
@@ -22,14 +22,13 @@ void	deallocate(char **strs)
 	free(strs);
 }
 
+// TODO Handle error in insert_end
 int	main(int argc, char **argv)
 {
 	char	**strs;
 	t_stack	*stack_a;
 
-	stack_a = malloc(sizeof(t_stack));
-	if (stack_a == NULL)
-		return (ft_putstr_fd("Error\n", 2), 0);
+	stack_a = NULL;
 	if (argc < 2)
 		return (ft_putstr_fd("Error\n", 2), 0);
 	else
@@ -38,9 +37,14 @@ int	main(int argc, char **argv)
 		if (is_valid_params(strs) == 0)
 			return (ft_putstr_fd("Error\n", 2), 0);
 		else
+		{
 			ft_printf("Let's go !\n");
-		deallocate(strs);
+			if (fill_stack(strs, &stack_a) != 0)
+				return (ft_putstr_fd("Error ici\n", 2), 0);
+		}
+		deallocate_args(strs);
 	}
-	free(stack_a);
+	print_list(&stack_a);
+	deallocate_lists(&stack_a);
 	return (0);
 }
