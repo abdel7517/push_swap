@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *nptr)
+long long int	ft_atoi(const char *nptr)
 {
-	int	result;
-	int	sign;
-	int	i;
+	long long int	result;
+	int				sign;
+	int				i;
 
 	i = 0;
 	sign = 1;
@@ -38,12 +38,3 @@ int	ft_atoi(const char *nptr)
 	return (result * sign);
 }
 
-/* int	main(int argc, char** argv)
-{
-	if (argc > 1)
-	{
-		printf("FT_ATOI : %d\n", ft_atoi(argv[1]));
-		printf("ATOI : %d\n", atoi(argv[1]));
-	}
-	return (0);
-} */
