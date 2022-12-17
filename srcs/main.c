@@ -12,8 +12,30 @@
 
 #include "./push_swap.h"
 
-int	main(void)
+void	deallocate(char **strs)
 {
-	ft_printf("Hello World !");
+	int	i;
+
+	i = 0;
+	while (strs[i])
+		free(strs[i++]);
+	free(strs);
+}
+
+int	main(int argc, char **argv)
+{
+	char	**strs;
+
+	if (argc < 2)
+		return (ft_putstr_fd("Error\n", 2), 0);
+	else
+	{
+		strs = ft_concat_split(argc, argv);
+		if (is_valid_params(strs) == 0)
+			return (ft_putstr_fd("Error\n", 2), 0);
+		else
+			ft_printf("Let's go !\n");
+		deallocate(strs);
+	}
 	return (0);
 }

@@ -1,15 +1,10 @@
 # /* ~~~~~~ SOURCES ~~~~~~ */
 SRCS_DIR = ./srcs/
-SRCS =	main.c
+SRCS =	main.c \
+		ft_concat.c \
+		check_map.c \
 
 OBJS = ${addprefix ${SRCS_DIR}, ${SRCS:.c=.o}}
-
-# /* ~~~~~~~ INCLUDING GNL ~~~~~~~ */
-GNL_DIR = ./get_next_line/
-GNL = get_next_line.c \
-	get_next_line_utils.c \
-
-GNL_OBJS = ${addprefix ${GNL_DIR}, ${GNL:.c=.o}}
 
 # /* ~~~~~~~ INCLUDING LIBFT ~~~~~~~ */
 LIBFT_DIR = libft
@@ -48,19 +43,19 @@ $(NAME): $(OBJS) $(GNL_OBJS)
 	@cd $(LIBFT_DIR) && $(MAKE)
 	@cd $(FT_PRINTF_DIR) && $(MAKE)
 	@echo $(CYAN) " - Compiling $@" $(RED)
-	@$(CC) $(CFLAGS) $(OBJS) $(GNL_OBJS) $(IFLAGS) $(LFLAGS) $(LPRINTF_FLAGS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(IFLAGS) $(LFLAGS) $(LPRINTF_FLAGS) -o $(NAME)
 	@echo $(GREEN) "[OK COMPILED]" $(EOC)
 	@echo $(GREEN) "[LAUNCH PROGRAMM]" $(EOC)
 
 clean:
 		@echo $(PURPLE) "[🧹Cleaning...🧹]" $(EOC)
-		@${RM} ${OBJS} $(GNL_OBJS) ${NAME}
+		@${RM} ${OBJS} ${NAME}
 		@${RM} -r ${OBJ_DIR}
 		@make -C ${LIBFT_DIR} -f ${LIBFT_MAKE} clean
 
 fclean: clean
 		@echo $(PURPLE) "[🧹FCleaning...🧹]" $(EOC)
-		@${RM} ${OBJS} $(GNL_OBJS) ${NAME}
+		@${RM} ${OBJS} ${NAME}
 		@make -C $(FT_PRINTF_DIR) -f $(FT_PRINTF_MAKE)  
 		@cd $(LIBFT_DIR) && $(MAKE) fclean
 		@cd $(FT_PRINTF_DIR) && $(MAKE) fclean
