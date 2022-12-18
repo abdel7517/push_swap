@@ -27,7 +27,7 @@ int	insert_end(t_stack **root, long long int value, int index)
 	if (*root == NULL)
 	{
 		*root = new_node;
-		return (-1);
+		return (0);
 	}
 	while (current->next != NULL)
 		current = current->next;
@@ -50,7 +50,6 @@ void	deallocate_lists(t_stack **root)
 	*root = NULL;
 }
 
-// TODO deallocate in case error
 int	fill_stack(char **args, t_stack **root)
 {
 	int	i;

@@ -22,7 +22,6 @@ void	deallocate_args(char **strs)
 	free(strs);
 }
 
-// TODO Handle error in insert_end
 int	main(int argc, char **argv)
 {
 	char	**strs;
@@ -38,9 +37,9 @@ int	main(int argc, char **argv)
 			return (ft_putstr_fd("Error\n", 2), 0);
 		else
 		{
-			ft_printf("Let's go !\n");
 			if (fill_stack(strs, &stack_a) != 0)
 				return (ft_putstr_fd("Error ici\n", 2), 0);
+			ft_printf("Let's go !\n");
 		}
 		deallocate_args(strs);
 	}
