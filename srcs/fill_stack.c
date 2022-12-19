@@ -12,7 +12,7 @@
 
 #include "./push_swap.h"
 
-int	insert_end(t_stack **root, long long int value, int index)
+int	insert_end(t_stack **root, long long int value)
 {
 	t_stack	*new_node;
 	t_stack	*current;
@@ -23,7 +23,6 @@ int	insert_end(t_stack **root, long long int value, int index)
 		return (-1);
 	new_node->next = NULL;
 	new_node->value = value;
-	new_node->index = index;
 	if (*root == NULL)
 	{
 		*root = new_node;
@@ -57,7 +56,7 @@ int	fill_stack(char **args, t_stack **root)
 	i = 0;
 	while (args[i])
 	{
-		if (insert_end(root, ft_atoi(args[i]), i) != 0)
+		if (insert_end(root, ft_atoi(args[i])) != 0)
 		{
 			deallocate_lists(root);
 			return (-1);
@@ -69,12 +68,14 @@ int	fill_stack(char **args, t_stack **root)
 
 void	print_list(t_stack **root)
 {
+	int		i;
 	t_stack	*current;
 
+	i = 0;
 	current = *root;
 	while (current)
 	{
-		ft_printf("[%d] : %d\n", current->index, current->value);
+		ft_printf("[%d] : %d\n", i, current->value);
 		current = current->next;
 	}
 }

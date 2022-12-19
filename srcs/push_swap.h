@@ -21,11 +21,11 @@
 
 typedef struct s_stack
 {
-	long long int				value;
-	int							index;
-	struct s_stack				*next;
+	long long int	value;
+	struct s_stack	*next;
 }	t_stack;
 
+t_stack	*new_lst(int content);
 int		sa(t_stack *stack_a);
 int		sb(t_stack *stack_b);
 int		ss(t_stack *stack_a, t_stack *stack_b);
@@ -38,7 +38,6 @@ int		rra(t_stack *stack_a);
 int		rrb(t_stack *stack_b);
 int		rrr(t_stack *stack_a, t_stack *stack_b);
 int		ft_count_stack(t_stack *stack);
-t_stack	*new_lst(int content);
 int		ft_addback(t_stack **list, t_stack *new);
 int		add_front(t_stack **stack, t_stack *new);
 int		del_one(t_stack **list, t_stack **del);
@@ -49,7 +48,7 @@ void	print_list(t_stack **root);
 void	deallocate_args(char **strs);
 void	deallocate_lists(t_stack **root);
 int		fill_stack(char **args, t_stack **root);
-int		insert_end(t_stack **root, long long int value, int index);
+int		insert_end(t_stack **root, long long int value);
 int		is_present(char **argv, char *str, int index);
 int		is_valid_params(char **argv);
 int		is_all_digit(char *str);

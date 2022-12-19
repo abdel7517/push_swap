@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abchaban <abchaban@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmrabet <mmrabet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 14:17:04 by abchaban          #+#    #+#             */
-/*   Updated: 2022/12/19 11:00:22 by abchaban         ###   ########.fr       */
+/*   Updated: 2022/12/19 14:34:49 by mmrabet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int ft_count_stack(t_stack *stack)
+int	ft_count_stack(t_stack *stack)
 {
 	int	i;
 
@@ -28,8 +28,8 @@ int ft_count_stack(t_stack *stack)
 
 int	sa(t_stack *stack_a)
 {
-	int	tmp;
-	t_stack *stack_tmp;
+	int		tmp;
+	t_stack	*stack_tmp;
 
 	if (ft_count_stack(stack_a) <= 1)
 		return (0);
@@ -42,8 +42,8 @@ int	sa(t_stack *stack_a)
 
 int	sb(t_stack *stack_b)
 {
-	int	tmp;
-	t_stack *stack_tmp;
+	int		tmp;
+	t_stack	*stack_tmp;
 
 	if (ft_count_stack(stack_b) <= 1)
 		return (0);
