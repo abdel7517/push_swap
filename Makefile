@@ -11,7 +11,9 @@ OBJS = ${addprefix ${SRCS_DIR}, ${SRCS:.c=.o}}
 INSTRUCTIONS_DIR = ./srcs/instructions/
 INSTRUCTIONS =	utils_linked_list.c \
 		instructions.c \
-		instructions2.c 
+		instructions2.c \
+		instructions3.c 
+
 
 OBJS_INSTRUCTIONS = ${addprefix ${INSTRUCTIONS_DIR}, ${INSTRUCTIONS:.c=.o}}
 

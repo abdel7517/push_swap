@@ -54,7 +54,8 @@ int	main(int argc, char **argv)
 	puts("--- STACK_B ---");
 	print_list(&stack_b);
 
-	sa(stack_a);
+	rra(stack_a);
+
 	puts("--------------");
 	puts("--- AFTER ---");
 	puts("--------------");

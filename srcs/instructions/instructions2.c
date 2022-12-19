@@ -6,7 +6,7 @@
 /*   By: abchaban <abchaban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 07:55:20 by abchaban          #+#    #+#             */
-/*   Updated: 2022/12/19 11:00:31 by abchaban         ###   ########.fr       */
+/*   Updated: 2022/12/19 13:24:41 by abchaban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,37 +71,4 @@ int	rr(t_stack *stack_a, t_stack *stack_b)
 	return (0);
 }
 
-// rra (reverse rotate a) : Décale d’une position vers le bas tous les élements de
-// la pile a. Le dernier élément devient le premier.
-// 
-// int	rra(t_stack *stack)
-// {
-// 	int last;
-// 	t_stack *first;
-// 	t_stack	*n;
-// 	int last;
-// 	first = stack;
-// 	while (stack)
-// 	{
-// 		n = stack->next;
-		
-// 		if (first != stack)
-// 		{
-// 			n->value = 
-// 		}	
-// 		else
-// 		{
-			
-// 			n->value = stack->value;
-// 		}
-		
-// 		stack = stack->next;
-// 	}
-// 	return (1);
-// }
-// tmp = 9
-// 9 5 2 1 
-// 5 -> tmp
-// 
-// 2 -> 
-// 
+
