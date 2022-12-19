@@ -22,21 +22,22 @@
 typedef struct s_stack
 {
 	long long int	value;
+	struct s_stack	*previous;
 	struct s_stack	*next;
 }	t_stack;
 
 t_stack	*new_lst(int content);
-int		sa(t_stack *stack_a);
-int		sb(t_stack *stack_b);
-int		ss(t_stack *stack_a, t_stack *stack_b);
+int		sa(t_stack **stack_a);
+int		sb(t_stack **stack_b);
+int		ss(t_stack **stack_a, t_stack **stack_b);
 int		pa(t_stack **stack_a, t_stack **stack_b);
 int		pb(t_stack **stack_a, t_stack **stack_b);
-int		ra(t_stack *stack);
-int		rb(t_stack *stack);
-int		rr(t_stack *t_stack_a, t_stack *t_stack_b);
-int		rra(t_stack *stack_a);
-int		rrb(t_stack *stack_b);
-int		rrr(t_stack *stack_a, t_stack *stack_b);
+int		ra(t_stack **stack);
+int		rb(t_stack **stack);
+int		rr(t_stack **t_stack_a, t_stack **t_stack_b);
+int		rra(t_stack **stack_a);
+int		rrb(t_stack **stack_b);
+int		rrr(t_stack **stack_a, t_stack **stack_b);
 int		ft_count_stack(t_stack *stack);
 int		ft_addback(t_stack **list, t_stack *new);
 int		add_front(t_stack **stack, t_stack *new);

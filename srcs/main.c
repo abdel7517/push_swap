@@ -45,7 +45,7 @@ int	main(int argc, char **argv)
 		}
 		deallocate_args(strs);
 	}
-	create_stack_b(stack_a ,&stack_b);
+
 	puts("--------------");
 	puts("--- BEFORE ---");
 	puts("--------------");
@@ -54,7 +54,15 @@ int	main(int argc, char **argv)
 	puts("--- STACK_B ---");
 	print_list(&stack_b);
 
-	rra(stack_a);
+	sa(&stack_a);
+	pb(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
+	rr(&stack_a, &stack_b);
+	rrr(stack_a, stack_b);
+	// sa(stack_a);
+	// pa(&stack_a, &stack_b);
+
 
 	puts("--------------");
 	puts("--- AFTER ---");
