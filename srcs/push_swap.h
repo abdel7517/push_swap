@@ -21,11 +21,25 @@
 
 typedef struct s_stack
 {
-	long long int				value;
+	long long int				s;
 	int							index;
 	struct s_stack				*next;
 }	t_stack;
 
+int		sa(t_stack *stack_a);
+int		sb(t_stack *stack_b);
+int		ss(t_stack *stack_a, t_stack *stack_b);
+int		pa(t_stack **stack_a, t_stack **stack_b);
+int		pb(t_stack **stack_a, t_stack **stack_b);
+int		ra(t_stack *stack);
+int		rb(t_stack *stack);
+int		rr(t_stack *t_stack_a, t_stack *t_stack_b);
+int		rra(t_stack *stack);
+int		ft_count_stack(t_stack *stack);
+t_stack	*new_lst(int content);
+int		ft_addback(t_stack **list, t_stack *new);
+int		add_front(t_stack **stack, t_stack *new);
+int		del_one(t_stack **list, t_stack **del);
 char	**ft_concat_split(int argc, char **argv);
 char	*ft_strcat(char *dest, char *src);
 char	*ft_concat(int argc, char **argv);

@@ -7,6 +7,14 @@ SRCS =	main.c \
 
 OBJS = ${addprefix ${SRCS_DIR}, ${SRCS:.c=.o}}
 
+# /* ~~~~~~ INSTRUCTIONS ~~~~~~ */
+INSTRUCTIONS_DIR = ./srcs/instructions/
+INSTRUCTIONS =	utils_linked_list.c \
+		instructions.c \
+		instructions2.c 
+
+OBJS_INSTRUCTIONS = ${addprefix ${INSTRUCTIONS_DIR}, ${INSTRUCTIONS:.c=.o}}
+
 # /* ~~~~~~~ INCLUDING LIBFT ~~~~~~~ */
 LIBFT_DIR = libft
 LIBFT_MAKE = Makefile
@@ -40,17 +48,17 @@ EOC:="\033[0;0m"
 
 all:	${NAME}
 
-$(NAME): $(OBJS) $(GNL_OBJS)
+$(NAME): $(OBJS) $(GNL_OBJS) $(OBJS_INSTRUCTIONS)
 	@cd $(LIBFT_DIR) && $(MAKE)
 	@cd $(FT_PRINTF_DIR) && $(MAKE)
 	@echo $(CYAN) " - Compiling $@" $(RED)
-	@$(CC) $(CFLAGS) $(OBJS) $(IFLAGS) $(LFLAGS) $(LPRINTF_FLAGS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS)  $(OBJS_INSTRUCTIONS) $(IFLAGS) $(LFLAGS) $(LPRINTF_FLAGS) -o $(NAME)
 	@echo $(GREEN) "[OK COMPILED]" $(EOC)
 	@echo $(GREEN) "[LAUNCH PROGRAMM]" $(EOC)
 
 clean:
 		@echo $(PURPLE) "[🧹Cleaning...🧹]" $(EOC)
-		@${RM} ${OBJS} ${NAME}
+		@${RM} ${OBJS}  $(OBJS_INSTRUCTIONS) ${NAME}
 		@${RM} -r ${OBJ_DIR}
 		@make -C ${LIBFT_DIR} -f ${LIBFT_MAKE} clean
 

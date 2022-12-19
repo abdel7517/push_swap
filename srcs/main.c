@@ -43,6 +43,10 @@ int	main(int argc, char **argv)
 		}
 		deallocate_args(strs);
 	}
+	puts("--- BEFORE ---");
+	print_list(&stack_a);
+	sa(stack_a);
+	puts("--- AFTER ---");
 	print_list(&stack_a);
 	deallocate_lists(&stack_a);
 	return (0);
