@@ -26,8 +26,10 @@ int	main(int argc, char **argv)
 {
 	char	**strs;
 	t_stack	*stack_a;
+	t_stack	*stack_b;
 
 	stack_a = NULL;
+	stack_b = NULL;
 	if (argc < 2)
 		return (ft_putstr_fd("Error\n", 2), 0);
 	else
@@ -43,11 +45,25 @@ int	main(int argc, char **argv)
 		}
 		deallocate_args(strs);
 	}
+	create_stack_b(stack_a ,&stack_b);
+	puts("--------------");
 	puts("--- BEFORE ---");
+	puts("--------------");
+	puts("--- STACK_A ---");
 	print_list(&stack_a);
+	puts("--- STACK_B ---");
+	print_list(&stack_b);
+
 	sa(stack_a);
+	puts("--------------");
 	puts("--- AFTER ---");
+	puts("--------------");
+	puts("--- STACK_A ---");
 	print_list(&stack_a);
+	puts("--- STACK_B ---");
+	print_list(&stack_b);
 	deallocate_lists(&stack_a);
+	deallocate_lists(&stack_b);
+
 	return (0);
 }

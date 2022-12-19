@@ -65,3 +65,37 @@ char	**ft_concat_split(int argc, char **argv)
 	free(str);
 	return (strs);
 }
+
+int		create_stack_b(t_stack *stack_a, t_stack **stack_b)
+{
+	int	i;
+	int	j;
+	t_stack *tmp;
+	t_stack *first;
+	t_stack *list;
+
+	list = *stack_b;
+	i = 0;
+	j = 0;
+	while (stack_a)
+	{
+		i++;
+		stack_a = stack_a->next;
+	}
+	first = new_lst(0);
+	first->index = j++;
+	ft_addback(stack_b, first);
+	while (i > j)
+	{
+		tmp = new_lst(0);
+		tmp->index = j +1;
+		if (!tmp)
+		{
+			deallocate_lists(stack_b);
+			return (-1);
+		}
+		ft_addback(stack_b, tmp);
+		j++;
+	}
+	return (0);
+}

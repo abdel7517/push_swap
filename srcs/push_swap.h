@@ -21,7 +21,7 @@
 
 typedef struct s_stack
 {
-	long long int				s;
+	long long int				value;
 	int							index;
 	struct s_stack				*next;
 }	t_stack;
@@ -51,5 +51,6 @@ int		insert_end(t_stack **root, long long int value, int index);
 int		is_present(char **argv, char *str, int index);
 int		is_valid_params(char **argv);
 int		is_all_digit(char *str);
+int		create_stack_b(t_stack *stack_a, t_stack **stack_b);
 
 #endif
