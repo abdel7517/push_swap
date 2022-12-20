@@ -59,9 +59,11 @@ int	main(int argc, char **argv)
 	pb(&stack_a, &stack_b);
 	pb(&stack_a, &stack_b);
 	rr(&stack_a, &stack_b);
-	rrr(stack_a, stack_b);
-	// sa(stack_a);
-	// pa(&stack_a, &stack_b);
+	rrr(&stack_a, &stack_b);
+	sa(&stack_a);
+	pa(&stack_a, &stack_b);
+	pa(&stack_a, &stack_b);
+	pa(&stack_a, &stack_b);
 
 
 	puts("--------------");
