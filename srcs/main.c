@@ -22,6 +22,54 @@ void	deallocate_args(char **strs)
 	free(strs);
 }
 
+void	ft_sort(t_stack **lst)
+{
+	t_stack		*list;
+	t_stack		*lst_tmp;
+	long long	tmp;
+
+	list = *(lst);
+	while (list)
+	{
+		lst_tmp = list->next;
+		while (lst_tmp)
+		{
+			if (list->value > lst_tmp->value)
+			{
+				tmp = list->value;
+				list->value = lst_tmp->value;
+				lst_tmp->value = tmp;
+			}
+			lst_tmp = lst_tmp->next;
+		}
+		printf("\n");
+		list = list->next;
+	}
+}
+
+
+void	get_index(t_stack **stack_a)
+{
+	t_stack	*current;
+	int		i;
+
+	i = 0;
+	current = *stack_a;
+	ft_sort(stack_a);
+	while (current)
+	{
+		current->index = i;
+		current = current->next;
+		i++;
+	}
+}
+
+void	push_swap(t_stack **stack_a, t_stack **stack_b)
+{
+	(void)stack_b;	
+	get_index(stack_a);
+}
+
 int	main(int argc, char **argv)
 {
 	char	**strs;
@@ -45,7 +93,7 @@ int	main(int argc, char **argv)
 		}
 		deallocate_args(strs);
 	}
-
+	push_swap(&stack_a, &stack_b);
 	puts("--------------");
 	puts("--- BEFORE ---");
 	puts("--------------");
@@ -54,16 +102,16 @@ int	main(int argc, char **argv)
 	puts("--- STACK_B ---");
 	print_list(&stack_b);
 
-	sa(&stack_a);
+	// sa(&stack_a);
 	pb(&stack_a, &stack_b);
 	pb(&stack_a, &stack_b);
 	pb(&stack_a, &stack_b);
-	rr(&stack_a, &stack_b);
-	rrr(&stack_a, &stack_b);
-	sa(&stack_a);
-	pa(&stack_a, &stack_b);
-	pa(&stack_a, &stack_b);
-	pa(&stack_a, &stack_b);
+	// rr(&stack_a, &stack_b);
+	// rrr(&stack_a, &stack_b);
+	// sa(&stack_a);
+	// pa(&stack_a, &stack_b);
+	// pa(&stack_a, &stack_b);
+	// pa(&stack_a, &stack_b);
 
 
 	puts("--------------");

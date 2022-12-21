@@ -68,14 +68,12 @@ int	fill_stack(char **args, t_stack **root)
 
 void	print_list(t_stack **root)
 {
-	int		i;
 	t_stack	*current;
 
-	i = 0;
 	current = *root;
 	while (current)
 	{
-		ft_printf("[%d] : %d\n", i, current->value);
+		ft_printf("[%d] : %d\n", current->index, current->value);
 		current = current->next;
 	}
 }

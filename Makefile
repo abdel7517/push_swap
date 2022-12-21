@@ -68,7 +68,7 @@ fclean: clean
 		@echo $(PURPLE) "[🧹FCleaning...🧹]" $(EOC)
 		@${RM} ${OBJS} ${NAME}
 		@make -C $(FT_PRINTF_DIR) -f $(FT_PRINTF_MAKE)  
-		@cd $(LIBFT_DIR) && $(MAKE) fclean
+		@cd $(LIBFT_DIR) && $(MAKE) fclean 
 		@cd $(FT_PRINTF_DIR) && $(MAKE) fclean
 
 re: 	fclean all
