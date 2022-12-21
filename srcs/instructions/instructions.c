@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmrabet <mmrabet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abchaban <abchaban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 14:17:04 by abchaban          #+#    #+#             */
-/*   Updated: 2022/12/20 09:32:36 by mmrabet          ###   ########.fr       */
+/*   Updated: 2022/12/21 10:07:02 by abchaban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,20 @@ int	ft_count_stack(t_stack *stack)
 
 int	sa(t_stack **stack_a)
 {
-	int		tmp;
-	t_stack	*stack_tmp;
+	long long int		tmp;
+	int					index;
+	t_stack				*stack_tmp;
 
 	if (ft_count_stack(*(stack_a)) <= 1)
 		return (1);
 	tmp = (*stack_a)->value;
+	index = (*stack_a)->index;
 	stack_tmp = (*stack_a)->next;
 	(*stack_a)->value = stack_tmp->value;
+	(*stack_a)->index = stack_tmp->index;
 	stack_tmp->value = tmp;
+	stack_tmp->index = index;
+
 	return (0);
 }
 

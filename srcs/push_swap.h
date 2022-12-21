@@ -22,7 +22,7 @@
 typedef struct s_stack
 {
 	long long int	value;
-	long long int	index;
+	char 			*index;
 	struct s_stack	*next;
 }	t_stack;
 

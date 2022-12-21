@@ -73,7 +73,7 @@ void	print_list(t_stack **root)
 	current = *root;
 	while (current)
 	{
-		ft_printf("[%d] : %d\n", current->index, current->value);
+		ft_printf("[%s] : %d\n", current->index, current->value);
 		current = current->next;
 	}
 }
